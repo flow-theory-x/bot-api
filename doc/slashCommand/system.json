@@ -6,7 +6,7 @@
       "name": "str",
       "type": 3,
       "required": true,
-      "description": "管理コマンド"
+      "description": "管理コマンド[help|ver|info]"
     }
   ]
 }

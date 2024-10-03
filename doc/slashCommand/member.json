@@ -1,0 +1,12 @@
+{
+  "name": "member",
+  "description": "ComBotがお手伝いします。",
+  "options": [
+    {
+      "name": "str",
+      "type": 3,
+      "required": true,
+      "description": "コマンド [help|regist|check]"
+    }
+  ]
+}

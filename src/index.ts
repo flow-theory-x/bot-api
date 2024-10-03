@@ -60,10 +60,7 @@ app.post(
         await controller.sqsSend({
           function: "discord-response",
           params: {
-            message:
-              message.member.user.global_name +
-              "さんこんにちは。 api-ver:" +
-              CONST.VERSION,
+            message: message.member.user.global_name + "さんGM!",
             mesToken: message.token,
           },
         });
@@ -71,6 +68,20 @@ app.post(
         res.send({
           type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
         });
+      } else {
+        //=============================================================
+        // BG側で処理するものはmessageごと転送
+        await controller.sqsSend({
+          function: "system-connect",
+          params: {
+            message: JSON.stringify(message),
+            apivar: CONST.VERSION,
+          },
+        });
+        res.send({
+          type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
+        });
+        //=============================================================
       }
     }
   }
