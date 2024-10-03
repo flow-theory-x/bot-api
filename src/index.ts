@@ -41,18 +41,6 @@ app.get("/", async (_, res) => {
   res.send(result);
 });
 
-app.get("/sendMember/:id/:mes", async (req, res) => {
-  const message = "sendMessage for member:";
-  await controller.sqsSend({
-    function: "discord-direct-message",
-    params: {
-      message: req.params.mes,
-      userId: req.params.id,
-    },
-  });
-  res.send({ message: message + req.params.mes + " to " + req.params.id });
-});
-
 app.post(
   "/interactions",
   verifyKeyMiddleware(CONST.DISCORD_PUB_KEY),
@@ -72,7 +60,10 @@ app.post(
         await controller.sqsSend({
           function: "discord-response",
           params: {
-            message: message.member.user.global_name + "さんにお返しします。",
+            message:
+              message.member.user.global_name +
+              "さんこんにちは。 api-ver:" +
+              CONST.VERSION,
             mesToken: message.token,
           },
         });

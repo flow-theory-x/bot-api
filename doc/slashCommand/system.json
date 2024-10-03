@@ -1,0 +1,12 @@
+{
+  "name": "system",
+  "description": "システム管理用",
+  "options": [
+    {
+      "name": "str",
+      "type": 3,
+      "required": true,
+      "description": "管理コマンド"
+    }
+  ]
+}

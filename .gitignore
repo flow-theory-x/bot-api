@@ -134,3 +134,4 @@ dist
 *.env
 customSettings.ts
 deploy/custom_settings/*
+doc/slashCommand/*.sh
