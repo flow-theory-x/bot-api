@@ -30,15 +30,21 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.get("/", async (_, res) => {
-  const result =
-    "<h1>" +
-    CONST.API_NAME +
-    " ver." +
-    CONST.VERSION +
-    " [" +
-    CONST.DEPLOY_DATETIME +
-    "]</h1>";
+  const result = `<h1>${CONST.SERVER_INFO} ver. ${CONST.VERSION}</h1>
+  <p>DEPLOY:${CONST.DEPLOY_DATETIME}</p>
+  <p>TABLES:${CONST.DYNAMO_TABLE_PREFIX}</p>`;
   res.send(result);
+});
+
+app.get("/sqstest", async (_, res) => {
+  await controller.sqsSend({
+    function: "discord-message",
+    params: {
+      message: `SQS SEND TEST FROM ${CONST.SERVER_INFO}`,
+      channelId: CONST.DISCORD_DEVELOP_CHANNEL_ID,
+    },
+  });
+  res.send("SQS SEND TEST");
 });
 
 app.post(

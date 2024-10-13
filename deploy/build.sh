@@ -6,7 +6,17 @@ rm -r ../dist
 mkdir ../dist
 
 if [ $1 = 'stg' ]; then
-exit;
+	cp custom_settings/api_stg.env ../dist/.env
+	LAMBDA_FUNCTION_NAME=stg_api
+	filename="stg_upload.zip"
+	rm ${dir}/../${filename}
+	echo 'Zip for PRD'
+elif [ $1 = 'prd' ]; then
+	cp custom_settings/api_prd.env ../dist/.env
+	LAMBDA_FUNCTION_NAME=bizendao-bot-prd
+	filename="prd_upload.zip"
+	rm ${dir}/../${filename}
+	echo 'Zip for PRD'
 elif [ $1 = 'flow' ]; then
 	cp custom_settings/api_flow.env ../dist/.env
 	LAMBDA_FUNCTION_NAME=flow-api

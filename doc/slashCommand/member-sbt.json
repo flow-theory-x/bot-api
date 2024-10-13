@@ -1,0 +1,5 @@
+{
+  "name": "member-sbt",
+  "description": "会員証SBTを発行します",
+  "options": []
+}
