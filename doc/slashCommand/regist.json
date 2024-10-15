@@ -1,6 +1,6 @@
 {
   "name": "regist",
-  "description": "ウォレット登録",
+  "description": "ウォレットアドレスを登録します Register your wallet address",
   "options": [
     {
       "name": "str",

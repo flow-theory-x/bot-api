@@ -1,12 +1,12 @@
 {
   "name": "system",
-  "description": "システム管理用",
+  "description": "Administrator Only",
   "options": [
     {
       "name": "str",
       "type": 3,
       "required": true,
-      "description": "管理コマンド[help|ver|info]"
+      "description": "command [help|ver|info]"
     }
   ]
 }

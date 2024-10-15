@@ -1,6 +1,5 @@
 {
   "name": "editor",
-  "description": "記事を書くためのリンクを発行します。",
+  "description": "記事を書くためのリンクを発行します。Ill issue a link for article writing.",
   "options": []
 }
-

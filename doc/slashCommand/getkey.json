@@ -1,6 +1,6 @@
 {
   "name": "getkey",
-  "description": "購入時連絡用のsecretkeyを発行します",
+  "description": "購入時連絡用のsecretkeyを発行します。 Ill issue a seacretkey for contacting you at the time of purchase.",
   "options": [
     {
       "name": "nftinfo",
